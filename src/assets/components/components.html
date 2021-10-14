@@ -1,0 +1,94 @@
+<!-- Navigation -->
+<nav>
+    <img src="assets/images/favicon-32x32.png" alt="logo" class="nav-logo">
+    <ul id="nav-links">
+        <li><a href="#" class="active underline">LINK A</a></li>
+        <li><a href="#" class="underline">LINK B</a></li>
+        <li><a href="#" class="underline">LINK C</a></li>
+        <li><a href="#" class="underline">LINK D</a></li>
+    </ul>
+    <button onclick="burgerToggle()" class="nav-btn" aria-label="menu"><img src="assets/images/icons/nav-bar/bars-solid.svg" alt=""></button>
+</nav>
+<script>
+    function burgerToggle() {
+    const navLinks = document.querySelector("#nav-links");
+    if (navLinks.style.display === "block") {
+        navLinks.style.display = "none";
+    } else {
+        navLinks.style.display = "block";
+    }
+}
+</script>
+
+
+<!-- Theme toggle -->
+<input type="checkbox" id="themeToggle" aria-label="theme-toggle" class="toggle large">
+<script>
+const body = document.querySelector("body");
+const mqPCS = window.matchMedia("prefers-color-scheme");
+
+window.onload = () => {
+  const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const userPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  
+  if(userPrefersDark){
+    body.classList.add("theme-dark");
+  }
+  
+  if(userPrefersLight){
+    body.classList.add("theme-light");
+  }
+  
+}
+
+const themeToggle = document.querySelector("#themeToggle");
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    if (body.classList.contains("theme-light")) {
+      body.classList.replace("theme-light", "theme-dark");
+    } else {
+      body.classList.replace("theme-dark", "theme-light");
+    }
+  });
+}
+</script>
+
+<!-- Slider -->
+<div class="color-neutral-white box center column">
+    <div class="slide-container">
+        <input type="range" min="1" max="100" value="50" class="slider color-neutral-lighterx" id="myRange">
+    </div>
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox"/>
+            <span class="switch_toggle"></span>
+        </label>
+    </div>
+</div>
+
+<!-- Gradient checkbox -->
+<li class="center">
+    <label class="checkbox" for="x">
+        <input type="checkbox" id="x">
+        <span class="checkmark"></span>
+        <span class="checkbox-text">Checkbox text here!</span>
+    </label>
+</li>
+
+<!-- toTopBtn -->
+<button onclick="topFunction()" id="toTopBtn" title="Go to top" class="scale"><img src="assets/images/icons/toTopBtn/arrow-up-solid.svg" alt=""></button>
+<script>
+    // Scroll to top button, based on example from w3schools (https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
+toTopBtn = document.querySelector("#toTopBtn");
+
+// Denne kode gør at knappen dukker op når brugeren har rullet 20px ned ad siden
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    toTopBtn.style.display = "block";
+  } else {
+    toTopBtn.style.display = "none";
+  }
+}
+</script>

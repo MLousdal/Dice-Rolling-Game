@@ -1,0 +1,10 @@
+{
+  "plugins": {
+    "autoprefixer": {
+      "grid": true
+    },
+    "css-declaration-sorter": { 
+      "order": "alphabetical" 
+    }
+  }
+}
