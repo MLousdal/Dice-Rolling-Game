@@ -1,41 +1,21 @@
-# 🌐 webTemplate
-## 👓 Overview
+# 🎲 Dice on ice
+Dice on ice was made as a challenge in the [javascript-mini-projects](https://github.com/thinkswell/javascript-mini-projects) project to create a javaScript project without the need for a framework.
 
-webTemplate serves as a spring board to use when diving in to a new project 🏊
-- Setup with parcel for compiling 
-- SASS structure in place for easy development
-- Pre styled versions of the most common html tags
-- modules available with html, a partial scss file and js
-- It's a starting point, not a framework
+### 🚀 Live
 
-## 💻 Browser support
+[Live here](https://dice-rolling-game.vercel.app/)
 
-webTemplate utilizes [Autoprefixer](https://github.com/postcss/autoprefixer) as part of Parcel, and thus ensures that most styles are as cross compatible as possible. All styles are also resat with [Eric Meyer's reset](https://meyerweb.com/eric/tools/css/reset/). For best compatibility, these browsers are recommended:
+## 👓 Features
 
-- Chrome latest
-- Firefox latest
-- Opera latest
-- Safari latest
+- Rolling of dice
+- Hold the score
+- Functional animations
 
-## 🗄️ Files included
-
-When opening the repo you will find an almost clean index.html, and a showcase.html for all the styled elements. The scss folder is organized according to the principles described in [SMACSS](http://smacss.com/).
-```
-webTemplate/src/
-├── index.html
-├── showcase.html
-└── assets/
-    ├── components
-    ├── images
-    ├── js
-    └── scss
-        ├── base
-        ├── layout
-        ├── mixins
-        ├── module
-        ├── themes
-        └── main.scss
-```
+## 📜 Rules
+- Each player is allowed to roll the dice till the dice shows one
+- As soon as dice shows one all the cumulative scores till now becomes zero
+- If the player holds the score, then his/her score is added to his permanent final score
+- The first player to score a permanent score of 50 wins!!
 
 ## ⚙️ Compiling
 
@@ -52,8 +32,4 @@ $ npm run build
 
 ## 🎫 License
 
-All parts of webTemplate are free to tinkering under the [open-source MIT license](https://github.com/MLousdal/webTemplate/blob/main/LICENSE).
-
-## 🙏 Acknowledgement
-
-webTemplate was created by [Mads Lousdal](https://github.com/MLousdal), with inspiration from both the [Skeleton project](https://github.com/dhg/Skeleton), and [spectre.css](https://github.com/picturepan2/spectre)
+All parts of this repository are free to tinkering under the [open-source MIT license](https://github.com/MLousdal/webTemplate/blob/main/LICENSE).
