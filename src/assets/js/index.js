@@ -36,20 +36,14 @@ function rollDice() {
 
   // Loosing scenario
   if (roll == 1) {
-    resetScore();
-    console.log(
-      `roll: ${roll}`,
-      `newScore: ${newScore}`,
-      `player: ${currentPlayer.player}`
-    );
+    resetScore(currentPlayer.held);
+    ScoreEl.classList.add("error-animation")
+    setTimeout(() => {
+      ScoreEl.classList.remove("error-animation")
+    }, 750);
     switchPlayer();
     return;
   }
-  console.log(
-    `roll: ${roll}`,
-    `newScore: ${newScore}`,
-    `player: ${currentPlayer.player}`
-  );
 
   // Winning scenario
   if (newScore >= 50) {
@@ -61,7 +55,12 @@ function rollDice() {
   updateScore(newScore);
 }
 
-function resetScore() {
+function resetScore(held) {
+  ScoreEl.innerText = held;
+  updateScore(held);
+}
+
+function totalResetScore() {
   let reset = 0;
   ScoreEl.innerText = reset;
   currentPlayer.held = reset;
@@ -107,9 +106,9 @@ function holdScore() {
 }
 
 function newGame() {
-  resetScore();
+  totalResetScore();
   switchPlayer();
-  resetScore();
+  totalResetScore();
   switchPlayer();
   rollBtn.removeAttribute("disabled");
   holdBtn.removeAttribute("disabled");

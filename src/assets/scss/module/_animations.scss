@@ -1,0 +1,14 @@
+@use "../base/variables" as *;
+
+.error-animation {
+  color: $error-color;
+  animation-name: error;
+  animation-duration: 0.75s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes error {
+  from {color: $error-color;}
+  to {color: var(--font-color);}
+}
