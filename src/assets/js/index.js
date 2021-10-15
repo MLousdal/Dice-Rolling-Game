@@ -1,33 +1,68 @@
-// import * as classes from '../scss/main.scss'; // For css in js
+let players = {
+  player1: {
+    player: 1,
+    score: null,
+    held: 0,
+  },
+  player2: {
+    player: 2,
+    score: null,
+    held: 0,
+  },
+};
 
-// Theme toggle
-// const body = document.querySelector("body");
-// const mqPCS = window.matchMedia("prefers-color-scheme");
+const rollBtn = document.querySelector("#rollDice");
+const holdBtn = document.querySelector("#hold");
+const newGameBtn = document.querySelector("#newGame");
 
-// window.onload = () => {
-//   const userPrefersDark =
-//     window.matchMedia &&
-//     window.matchMedia("(prefers-color-scheme: dark)").matches;
-//   const userPrefersLight =
-//     window.matchMedia &&
-//     window.matchMedia("(prefers-color-scheme: light)").matches;
+const player1 = players.player1;
+const player1Area = document.querySelector("#player1");
+const player2 = players.player2;
+const player2Area = document.querySelector("#player2");
 
-//   if (userPrefersDark) {
-//     body.classList.add("theme-dark");
-//   }
+let currentPlayer = player1;
+let ScoreEl = player1Area.querySelector("#playerScore");
+let CurrentEl = player1Area.querySelectorAll("#currentScore");
 
-//   if (userPrefersLight) {
-//     body.classList.add("theme-light");
-//   }
-// };
+function rollDice() {
+  let sides = 6;
+  let roll = Math.floor(Math.random() * sides) + 1;
+  let score = currentPlayer.score;
+  let newScore = Number(score) + Number(roll);
 
-const themeToggle = document.querySelector("#themeToggle");
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    if (body.classList.contains("theme-light")) {
-      body.classList.replace("theme-light", "theme-dark");
-    } else {
-      body.classList.replace("theme-dark", "theme-light");
-    }
-  });
+  if (roll == 1) {
+    newScore = 0;
+    ScoreEl.innerText = newScore;
+    switchPlayer();
+  }
+
+  updateScore(newScore);
+  console.log(
+    `roll: ${roll}`,
+    `newScore: ${newScore}`,
+    `player: ${currentPlayer.player}`
+  );
 }
+
+function updateScore(newScore) {
+  currentPlayer.score = newScore;
+  ScoreEl.innerText = currentPlayer.score;
+}
+
+function switchPlayer() {
+  switch (currentPlayer.player) {
+    case 1:
+      currentPlayer = player2;
+      ScoreEl = player2Area.querySelector("#playerScore");
+      CurrentEl = player2Area.querySelectorAll("#currentScore");
+      break;
+    case 2:
+      currentPlayer = player1;
+      ScoreEl = player1Area.querySelector("#playerScore");
+      CurrentEl = player1Area.querySelectorAll("#currentScore");
+      break;
+  }
+}
+
+rollBtn.addEventListener("click", rollDice);
+// holdBtn.addEventListener("click", holdScore);

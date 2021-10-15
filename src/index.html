@@ -10,23 +10,23 @@
     <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png" sizes="32x32" />
     <script src="assets/js/index.js" defer="true" type="module"></script>
 </head>
-<body class="theme-light flex center">
+<body class="theme-light flex center column">
     <h1>Dice rollers 🎲</h1>
     <section class="box wrapper flex between gap-1 gameTable">
-        <section class="playerSection">
+        <section class="playerSection" id="player1">
             <h2>PLAYER 1</h2>
-            <span id="p1Score" class="score">0</span>
+            <span id="playerScore" class="score">0</span>
             <div class="current">
                 <p class="large-text">Current</p>
-                <span id="p1Current" class="score-05">0</span>
+                <span id="currentScore" class="score-05">0</span>
             </div>
         </section>
-        <section class="playerSection">
+        <section class="playerSection" id="player2">
             <h2>PLAYER 2</h2>
-            <span id="p2Score" class="score">0</span>
+            <span id="playerScore" class="score">0</span>
             <div class="current">
                 <p class="large-text">Current</p>
-                <span id="p2Current" class="score-05">0</span>    
+                <span id="currentScore" class="score-05">0</span>    
             </div>
         </section>
         <section class="buttonContainer flex column center gap-1">
