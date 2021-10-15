@@ -11,6 +11,7 @@ let players = {
   },
 };
 
+// Game code
 const rollBtn = document.querySelector("#rollDice");
 const holdBtn = document.querySelector("#hold");
 const newGameBtn = document.querySelector("#newGame");
@@ -118,3 +119,19 @@ function newGame() {
 rollBtn.addEventListener("click", rollDice);
 holdBtn.addEventListener("click", holdScore);
 newGameBtn.addEventListener("click", newGame);
+
+// Accordion code
+const acc = document.querySelectorAll(".accordion");
+
+acc.forEach((accordion) => {
+  accordion.addEventListener("click", function () {
+    this.classList.toggle("active");
+
+    let panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+});
