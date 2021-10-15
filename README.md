@@ -1,5 +1,5 @@
 # 🎲 Dice on ice
-Dice on ice was made as a challenge in the [javascript-mini-projects](https://github.com/thinkswell/javascript-mini-projects) project to create a javaScript project without the need for a framework.
+Dice on ice is a mini-project developed as a challenge in the [javascript-mini-projects](https://github.com/thinkswell/javascript-mini-projects) project to create a javaScript app without using a framework.
 
 ### 🚀 Live
 
