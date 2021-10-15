@@ -33,4 +33,8 @@
     --color-error-light: #{$error-color-dark};
     --color-warning-dark: #{$warning-color-light};
     --color-warning-light: #{$warning-color-dark};
+    
+    // Players
+    --player1-color: hsl(120, 100%, 20%);
+    --player2-color: hsl(0, 100%, 20%);
 }

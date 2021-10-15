@@ -16,7 +16,8 @@ body {
     background-color: var(--background-color);
     // gaps in column layout
     display: flex;
+    align-items: center;
     flex-flow: column nowrap;
-    gap: $unit-4;
+    gap: $unit-1;
     padding: $unit-2 0;
 }

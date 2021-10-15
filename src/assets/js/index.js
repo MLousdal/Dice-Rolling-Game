@@ -1,12 +1,10 @@
 let players = {
   player1: {
-    name: "Player 1",
     player: 1,
     score: null,
     held: 0,
   },
   player2: {
-    name: "Player 2",
     player: 2,
     score: null,
     held: 0,
@@ -25,9 +23,9 @@ const player2Area = document.querySelector("#player2");
 
 // Define player1 as default player
 let currentPlayer = player1;
-let playerNameEl = player1Area.querySelector("#playerNameEl");
 let ScoreEl = player1Area.querySelector("#playerScore");
 let CurrentEl = player1Area.querySelector("#currentScore");
+let wins = player1Area.querySelector("#wins");
 
 function rollDice() {
   let sides = 6;
@@ -54,7 +52,7 @@ function rollDice() {
 
   // Winning scenario
   if (newScore >= 20) {
-    playerNameEl.innerText += " 🌟";
+    wins.innerText += "🌟 ";
     rollBtn.setAttribute("disabled", "");
     holdBtn.setAttribute("disabled", "");
     newGameBtn.classList.remove("hide");
@@ -80,15 +78,15 @@ function switchPlayer() {
   switch (currentPlayer.player) {
     case 1:
       currentPlayer = player2;
-      playerNameEl = player2Area.querySelector("#playerNameEl");
       ScoreEl = player2Area.querySelector("#playerScore");
       CurrentEl = player2Area.querySelector("#currentScore");
+      wins = player2Area.querySelector("#wins");
       break;
     case 2:
       currentPlayer = player1;
-      playerNameEl = player1Area.querySelector("#playerNameEl");
       ScoreEl = player1Area.querySelector("#playerScore");
       CurrentEl = player1Area.querySelector("#currentScore");
+      wins = player1Area.querySelector("#wins");
       break;
   }
 }
@@ -108,16 +106,12 @@ function holdScore() {
 }
 
 function newGame() {
-  playerNameEl.innerText = currentPlayer.name;
   resetScore();
-
   switchPlayer();
-  playerNameEl.innerText = currentPlayer.name;
   resetScore();
-
+  switchPlayer();
   rollBtn.removeAttribute("disabled");
   holdBtn.removeAttribute("disabled");
-  switchPlayer();
   newGameBtn.classList.add("hide");
 }
 

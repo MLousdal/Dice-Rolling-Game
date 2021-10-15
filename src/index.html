@@ -10,31 +10,31 @@
     <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png" sizes="32x32" />
     <script src="assets/js/index.js" defer="true" type="module"></script>
 </head>
-<body class="theme-light flex center column">
+<body class="theme-light">
     <h1>Dice rollers 🎲</h1>
-    <section class="box wrapper flex between gap-1 gameTable">
-        <section class="playerSection" id="player1">
-            <h2 id="playerNameEl">PLAYER 1</h2>
+    <main class="wrapper flex between gap-1 gameTable">
+        <section class="playerSection box" id="player1">
+            <h2>PLAYER 1</h2>
             <span id="playerScore" class="score">0</span>
             <div class="current">
-                <p class="large-text">Current</p>
-                <span id="currentScore" class="score-05">0</span>
+                <div id="wins"></div>
+                <p class="large-text held">Held: <span id="currentScore">0</span></p>
             </div>
         </section>
-        <section class="playerSection" id="player2">
-            <h2 id="playerNameEl">PLAYER 2</h2>
+        <section class="playerSection box" id="player2">
+            <h2>PLAYER 2</h2>
             <span id="playerScore" class="score">0</span>
             <div class="current">
-                <p class="large-text">Current</p>
-                <span id="currentScore" class="score-05">0</span>    
+                <div id="wins"></div>
+                <p class="large-text held">Held: <span id="currentScore">0</span>  </p>
             </div>
         </section>
         <section class="buttonContainer flex column center gap-1">
-            <button id="newGame" class="hide">🔄 New Game</button>
-            <button id="rollDice">🎲 Roll dice</button>
-            <button id="hold">📥 hold</button>
+            <button id="newGame" class="hide" data-alttext="🔄 Restart"><span>🔄 New Game</span></button>
+            <button id="rollDice" data-alttext="🎲 Roll"><span>🎲 Roll dice</span></button>
+            <button id="hold" data-alttext="📥 hold"><span>📥 hold</span></button>
             </div>
         </section>
-    </section>
+    </main>
 </body>
 </html>

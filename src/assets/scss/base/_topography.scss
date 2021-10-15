@@ -21,12 +21,12 @@ h6 {
     font-weight: 400;
 }
 h1 {
-    font-size: clamp(3.8em, 10vw, 6em);
+    font-size: clamp(2.5em, 10vw, 6em);
     line-height: 1.2;
     letter-unit: -0.1rem;
 }
 h2 {
-    font-size: 3.6rem;
+    font-size: clamp(2em, 5vw, 3.6em);
     line-height: 1.25;
     letter-unit: -0.1rem;
 }

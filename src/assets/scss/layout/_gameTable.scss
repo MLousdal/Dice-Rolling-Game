@@ -1,17 +1,52 @@
 @use "../base/variables" as *;
 
 .gameTable {
-  min-height: 10rem;
-  height: 60vh;
-  max-height: 30rem;
   position: relative;
-  padding: $unit-3;
+
+  .playerSection {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0px;
+    text-align: center;
+
+    .current {
+      background-color: var(--foreground-color);
+      border-radius: $border-radius;
+      margin-top: auto;
+      padding: $unit-1 $unit-2;
+      width: fit-content;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .score {
+    font-size: 3rem;
+  }
+  .score-05 {
+    font-size: 1.5rem;
+  }
+
+  #player1 {
+    background-color: var(--player1-color);
+  }
+
+  #player2 {
+    background-color: var(--player2-color);
+  }
 
   .buttonContainer {
+    background-color: var(--foreground-color);
+    border-radius: $border-radius;
+    box-shadow: none;
+    left: 50%;
+    margin-top: auto;
+    padding: $unit-1 $unit-2;
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
+    width: fit-content;
 
     button {
       text-transform: uppercase;
@@ -19,26 +54,58 @@
   }
 }
 
-.playerSection {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 0px;
-  text-align: center;
-  align-items: center;
+@media (max-width: 1000px) {
+  .gameTable {
+    flex-direction: column;
 
-  .current {
-    padding: $unit-1 $unit-2;
-    background-color: var(--color-primary);
-    color: var(--font-color-inverse);
-    width: fit-content;
-    margin-top: auto;
-    border-radius: $border-radius;
+    .playerSection {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .current {
+        margin-top: 0;
+      }
+    }
+
+    .buttonContainer {
+      position: relative;
+      transform: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      order: -1;
+      flex-direction: row;
+    }
   }
 }
 
-.score {
-  font-size: 3rem;
-}
-.score-05 {
-  font-size: 1.5rem;
+@media (max-width: 600px) {
+  .gameTable {
+    .playerSection {
+      flex-wrap: wrap;
+
+      .current {
+        width: 100%;
+        flex-direction: row;
+        gap: $unit-1;
+        align-items: center;
+
+        .held {
+          margin-left: auto;
+        }
+      }
+
+    }
+    .buttonContainer {
+      padding: $unit-05;
+    }
+
+    [data-alttext] > span {
+      display: none;
+    }
+
+    [data-alttext]::before {
+      content: attr(data-alttext);
+    }
+  }
 }
