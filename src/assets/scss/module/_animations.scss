@@ -9,6 +9,10 @@
 }
 
 @keyframes error {
-  from {color: $error-color;}
-  to {color: var(--font-color);}
+  from {
+    color: $error-color;
+  }
+  to {
+    color: var(--font-color);
+  }
 }

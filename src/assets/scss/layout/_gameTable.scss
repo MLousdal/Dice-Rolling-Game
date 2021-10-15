@@ -22,7 +22,7 @@
   }
 
   .score {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
   }
   .score-05 {
     font-size: 1.5rem;
@@ -54,6 +54,18 @@
   }
 }
 
+.dice {
+  border-radius: $border-radius;
+  border: $border-width var(--font-color) solid;
+  font-size: $unit-2;
+  height: $unit-4;
+  padding: $unit-05;
+  width: $unit-4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 1000px) {
   .gameTable {
     flex-direction: column;
@@ -75,6 +87,15 @@
       width: 100%;
       order: -1;
       flex-direction: row;
+      flex-wrap: wrap;
+
+      .diceContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .dice {
+        }
+      }
     }
   }
 }
@@ -94,7 +115,6 @@
           margin-left: auto;
         }
       }
-
     }
     .buttonContainer {
       padding: $unit-05;

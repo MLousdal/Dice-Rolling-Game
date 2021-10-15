@@ -15,6 +15,7 @@ let players = {
 const rollBtn = document.querySelector("#rollDice");
 const holdBtn = document.querySelector("#hold");
 const newGameBtn = document.querySelector("#newGame");
+const dice = document.querySelector(".dice");
 
 // Player variables
 const player1 = players.player1;
@@ -34,12 +35,15 @@ function rollDice() {
   let score = currentPlayer.score;
   let newScore = Number(score) + Number(roll);
 
+  animateValue(dice, 8, roll, 150);
+  dice.innerHTML = roll;
+
   // Loosing scenario
   if (roll == 1) {
     resetScore(currentPlayer.held);
-    ScoreEl.classList.add("error-animation")
+    ScoreEl.classList.add("error-animation");
     setTimeout(() => {
-      ScoreEl.classList.remove("error-animation")
+      ScoreEl.classList.remove("error-animation");
     }, 750);
     switchPlayer();
     return;
@@ -51,6 +55,8 @@ function rollDice() {
     rollBtn.setAttribute("disabled", "");
     holdBtn.setAttribute("disabled", "");
     newGameBtn.classList.remove("hide");
+    rollBtn.classList.add("hide");
+    holdBtn.classList.add("hide");
   }
   updateScore(newScore);
 }
@@ -113,6 +119,8 @@ function newGame() {
   rollBtn.removeAttribute("disabled");
   holdBtn.removeAttribute("disabled");
   newGameBtn.classList.add("hide");
+  rollBtn.classList.remove("hide");
+  holdBtn.classList.remove("hide");
 }
 
 rollBtn.addEventListener("click", rollDice);
@@ -134,3 +142,17 @@ acc.forEach((accordion) => {
     }
   });
 });
+
+// Animate dice
+function animateValue(obj, start, end, duration) {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    obj.innerHTML = Math.floor(progress * (end - start) + start);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
