@@ -27,7 +27,10 @@ const player2Area = document.querySelector("#player2");
 let currentPlayer = player1;
 let ScoreEl = player1Area.querySelector("#playerScore");
 let CurrentEl = player1Area.querySelector("#currentScore");
+let activePlayer = player1Area.querySelector(".activePlayer");
 let wins = player1Area.querySelector("#wins");
+
+console.log(activePlayer);
 
 function rollDice() {
   let sides = 6;
@@ -81,17 +84,23 @@ function updateScore(newScore) {
 
 // Change the current player, and switch to their game board
 function switchPlayer() {
+  activePlayer.classList.remove("active");
+
   switch (currentPlayer.player) {
     case 1:
       currentPlayer = player2;
       ScoreEl = player2Area.querySelector("#playerScore");
       CurrentEl = player2Area.querySelector("#currentScore");
+      activePlayer = player2Area.querySelector(".activePlayer");
+      activePlayer.classList.add("active");
       wins = player2Area.querySelector("#wins");
       break;
     case 2:
       currentPlayer = player1;
       ScoreEl = player1Area.querySelector("#playerScore");
       CurrentEl = player1Area.querySelector("#currentScore");
+      activePlayer = player1Area.querySelector(".activePlayer");
+      activePlayer.classList.add("active");
       wins = player1Area.querySelector("#wins");
       break;
   }

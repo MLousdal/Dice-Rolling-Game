@@ -19,6 +19,15 @@
       display: flex;
       flex-direction: column;
     }
+
+    .activePlayer {
+      visibility: hidden;
+      width: fit-content;
+
+      &.active {
+        visibility: visible;
+      }
+    }
   }
 
   .score {
@@ -93,8 +102,6 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        .dice {
-        }
       }
     }
   }
