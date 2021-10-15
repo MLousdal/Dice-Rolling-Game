@@ -51,7 +51,7 @@ function rollDice() {
   );
 
   // Winning scenario
-  if (newScore >= 20) {
+  if (newScore >= 50) {
     wins.innerText += "🌟 ";
     rollBtn.setAttribute("disabled", "");
     holdBtn.setAttribute("disabled", "");
