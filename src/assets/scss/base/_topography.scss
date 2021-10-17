@@ -183,19 +183,3 @@ a {
         color: var(--color-primary-light);
     }
 }
-
-.external-link {
-    margin: 0 4px 0 2px;
-
-    &::after {
-        content: "";
-        filter: var(--filter-primary);
-        background-image: url(../images/icons/mdi_open-in-new.svg);
-        background-size: cover;
-        position: relative;
-        display: inline-block;
-        left: 4px;
-        width: $unit-1;
-        height: $unit-1;
-    }
-}

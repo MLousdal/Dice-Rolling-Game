@@ -3,7 +3,7 @@ Dice on ice is a mini-project developed as a challenge in the [javascript-mini-p
 
 ![Screenshot of the project](dicegame.png)
 
-### 🚀 Live
+## 🚀 Live
 
 [Live here](https://dice-rolling-game.vercel.app/)
 
@@ -14,6 +14,7 @@ Dice on ice is a mini-project developed as a challenge in the [javascript-mini-p
 - Functional animations
 
 ## 📜 Rules
+
 - Each player is allowed to roll the dice till the dice shows one
 - As soon as dice shows one all the cumulative scores till now becomes zero
 - If the player holds the score, then his/her score is added to his permanent final score
