@@ -1,6 +1,8 @@
 # 🎲 Dice on ice
 Dice on ice is a mini-project developed as a challenge in the [javascript-mini-projects](https://github.com/thinkswell/javascript-mini-projects) project to create a javaScript app without using a framework.
 
+![Screenshot of the project](dicegame.png)
+
 ### 🚀 Live
 
 [Live here](https://dice-rolling-game.vercel.app/)
